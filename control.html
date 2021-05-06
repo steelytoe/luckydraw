@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Lucky Me</title>
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!-- Roboto -->
+		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,500,700">
+
+		<link rel="stylesheet" href="ratchet-v2.0.2/css/ratchet.min.css">
+		<link rel="stylesheet" href="ratchet-v2.0.2/css/ratchet-theme-android.min.css">
+		<!-- <link rel="stylesheet" href="css/app.css"> -->
+		<script src="ratchet-v2.0.2/js/ratchet.min.js"></script>
+	</head>
+	<body>
+		<header class="bar bar-nav">
+			<h1 class="title">Lucky Draw Controller</h1>
+			<!-- <a class="icon icon-compose pull-right" href="#composeModal"></a>
+			<a href="#navPopover">
+				<h1 class="title">
+					<span class="icon icon-home"></span>
+					Notes
+					<span class="icon icon-caret"></span>
+				</h1>
+			</a> -->
+		</header>
+
+		<div class="content">
+			<!-- <ul class="table-view">
+				<li class="table-view-cell">
+					<a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
+						Note title goes here
+						<p>Lorem ipsum dolor sit amet...</p>
+					</a>
+				</li>
+			</ul> -->
+			<!-- <div class="bar bar-standard bar-header-secondary">
+				<button class="btn btn-block">Block level button</button>
+			</div>
+			<div class="bar bar-standard bar-header-secondary">
+				<button class="btn btn-block">Block level button</button>
+			</div> -->
+			<!-- <div class="bar bar-standard bar-footer-secondary">
+				<button class="btn btn-block">Block level button</button>
+			</div> -->
+			<!-- <button class="btn btn-block" onclick="reset()">Reset</button> -->
+			<!-- <button class="btn btn-primary btn-block">Random</button> -->
+			<button class="btn btn-positive btn-block" onclick="start()">Start Random</button>
+			<!-- <button class="btn btn-negative btn-block">Stop Digit</button>
+			<button class="btn btn-block btn-outlined">Stop All</button> -->
+			<!-- <button class="btn btn-primary btn-block btn-outlined">Block button</button>
+			<button class="btn btn-positive btn-block btn-outlined">Block button</button>
+			<button class="btn btn-negative btn-block btn-outlined">Block button</button> -->
+		</div>
+	</body>
+	<script src="/socket.io/socket.io.js"></script>
+	<script type="text/javascript">
+		// var socket = io.connect('http://luckydraw.race.id:3333');
+		var socket = io.connect('http://localhost:3333');
+		function reset(argument) {
+			socket.emit('reset');
+		}
+		function start(argument) {
+			socket.emit('start');
+		}
+	</script>
+</html>
